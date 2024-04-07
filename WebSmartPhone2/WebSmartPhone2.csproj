@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ChiTietSP.aspx" />
+    <Content Include="Counter.txt" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\nouislider.min.css" />
@@ -179,9 +180,8 @@
     <Content Include="js\slick.min.js" />
     <Content Include="LogIn.aspx" />
     <Content Include="Home.aspx" />
-    <Content Include="QLDoAnShopDienThoai.sql" />
     <Content Include="SanPham.aspx" />
-    <Content Include="store.html" />
+    <Content Include="SQLQuery2 %281%29.sql" />
     <Content Include="ThanhToan.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>

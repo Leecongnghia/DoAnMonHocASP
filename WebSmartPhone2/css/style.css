@@ -529,11 +529,11 @@ textarea.input {
 
 .header-ctn>div>a>i {
   display: block;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .header-ctn>div>a>span {
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .header-ctn>div>a>.qty {
@@ -731,7 +731,7 @@ textarea.input {
   margin: 15px 0px;
 }
 
-.shop:before {
+/*.shop:before {
   content: "";
   position: absolute;
   top: 0;
@@ -743,7 +743,7 @@ textarea.input {
   -webkit-transform: skewX(-45deg);
   -ms-transform: skewX(-45deg);
   transform: skewX(-45deg);
-}
+}*/
 
 .shop:after {
   content: "";

@@ -75,9 +75,7 @@
 							<div class="header-search">
 								<form>
 									<select class="input-select">
-										<option value="0">DANH MỤC</option>
-										<option value="1">Category 01</option>
-										<option value="1">Category 02</option>
+										
 									</select>
 									<input class="input" placeholder="Tìm kiếm sản phẩm tại đây...">
 									<button class="search-btn">Tìm Kiếm</button>
@@ -171,12 +169,18 @@
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
 						<li class="active"><a href="Home.aspx">TRANG CHỦ</a></li>
-						<li><a href="SanPham.aspx">SẢN PHẨM</a></li>
-						<li><a href="#">ĐIỆN THOẠI</a></li>
-						<li><a href="#">LAPTOP</a></li>
-						<li><a href="#">TAY NGHE</a></li>
-						<li><a href="#">BÀN PHÍM</a></li>
-						<li><a href="#">CHUỘT</a></li>
+						<li class="dropdown-content form-inline"><a class="" href="SanPham.aspx">SẢN PHẨM</a></li>
+						<li class="nav-item dropdown ">
+                            <a class="nav-link dropdown-toggle text-light" href="#" id="navbardrop" data-toggle="dropdown">Danh Mục Sản Phẩm
+                            </a>
+                            <div class="dropdown-menu">
+                                <asp:Repeater ID="rptTheLoai" runat="server" DataSourceID="sqlTheLoai">
+                                    <ItemTemplate>
+                                        <a class="dropdown-item" href="SanPham.aspx?=<%# Eval("id") %>"><%# Eval("ten") %></a>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                            </div>
+						</li>
 					</ul>
 					<!-- /NAV -->
 				</div>
@@ -193,6 +197,12 @@
             </asp:ContentPlaceHolder>
         </div>
     </form>
+
+	<div class="alert alert-warnings">
+            Số Lượng truy cập:<asp:Label ID="lbDemTruyCap" Font-Bold="true" runat="server" ForeColor="DeepPink" 
+                Text="Label"></asp:Label>
+        </div>
+
 
 		<!-- FOOTER -->
 		<footer id="footer">
@@ -279,7 +289,13 @@
 			<!-- /bottom footer -->
 		</footer>
 		<!-- /FOOTER -->
+	<%--SQL--%>
+	<asp:SqlDataSource ID="sqlTheLoai" runat="server" 
+		ConnectionString="<%$ ConnectionStrings:QLDoAnShopDienThoaiConnectionString %>" 
+		SelectCommand="SELECT * FROM [Theloai]"></asp:SqlDataSource>
 
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 		<!-- jQuery Plugins -->
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>

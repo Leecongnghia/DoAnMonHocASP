@@ -15,13 +15,22 @@ namespace WebSmartPhone2
     {
 
         /// <summary>
-        /// ddlTheLoai control.
+        /// rptTheLoai control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTheLoai;
+        protected global::System.Web.UI.WebControls.Repeater rptTheLoai;
+
+        /// <summary>
+        /// rptLoaiSanPham control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptLoaiSanPham;
 
         /// <summary>
         /// rptSanPham control.
@@ -33,15 +42,6 @@ namespace WebSmartPhone2
         protected global::System.Web.UI.WebControls.Repeater rptSanPham;
 
         /// <summary>
-        /// sdsTheLoai control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource sdsTheLoai;
-
-        /// <summary>
         /// sdsSanPham control.
         /// </summary>
         /// <remarks>
@@ -49,5 +49,23 @@ namespace WebSmartPhone2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource sdsSanPham;
+
+        /// <summary>
+        /// sdsLoaiSanPham control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource sdsLoaiSanPham;
+
+        /// <summary>
+        /// sdsTheLoai control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource sdsTheLoai;
     }
 }

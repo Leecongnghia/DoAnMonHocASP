@@ -14,13 +14,9 @@
             <div class="row">
                 <!-- ASIDE -->
                 <div id="aside" class="col-md-3">
-                       
-                    
                     <!-- aside Widget -->
                     <div class="aside">
-                        <h3 class="aside-title">DANH MỤC:
-                            <asp:DropDownList ID="ddlTheLoai" runat="server" AutoPostBack="True" DataSourceID="sdsTheLoai" DataTextField="Ten" DataValueField="id"></asp:DropDownList>
-                        </h3>
+                        <h3 class="aside-title"></h3>
                         
                     </div>
                     <!-- /aside Widget -->
@@ -28,38 +24,31 @@
                     <!-- aside Widget -->
                     <div class="aside">
                         <h3 class="aside-title">Top selling</h3>
-                        <div class="product-widget">
-                            <div class="product-img">
-                                <img src="#" alt="">
-                            </div>
-                            <div class="product-body">
-                                <p class="product-category">Category</p>
-                                <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-                            </div>
+                        
+                        <div class="col-6 ">
+                            <ul class="list-group" id="menu">
+                                <li href="#" class="list-group-item menu1 active">Menu
+                                </li>
+                                <asp:Repeater ID="rptTheLoai" DataSourceID="sdsTheLoai" runat="server">
+                                    <ItemTemplate>
+                                        <li href="#" class="list-group-item menu1">
+                                            <a href="#"><%# Eval("") %></a>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                                <asp:Repeater ID="rptLoaiSanPham" DataSourceID="sdsLoaiSanPham" runat="server">
+                                    <ItemTemplate>
+                                        <ul>
+                                            <li class="list-group-item">
+                                                <a href="#"><%# Eval("Ten") %></a>
+                                            </li>
+                                        </ul>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                                </li>
+                            </ul>
                         </div>
-
-                        <div class="product-widget">
-                            <div class="product-img">
-                                <img src="./img/product02.png" alt="">
-                            </div>
-                            <div class="product-body">
-                                <p class="product-category">Category</p>
-                                <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-                            </div>
-                        </div>
-
-                        <div class="product-widget">
-                            <div class="product-img">
-                                <img src="./img/product03.png" alt="">
-                            </div>
-                            <div class="product-body">
-                                <p class="product-category">Category</p>
-                                <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-                            </div>
-                        </div>
+                                
+                        
                     </div>
                     <!-- /aside Widget -->
                 </div>
@@ -72,7 +61,6 @@
                         <div class="store-sort">
                             <label>
                                 Giá Từ
-								
                                 <select class="input-select">
                                     <option value="0">Popular</option>
                                     <option value="1">Position</option>
@@ -98,47 +86,40 @@
                     <!-- store products -->
                     <div class="row">
                         <!-- product -->
-                        <div class="col-md-4 col-xs-6">
-                            <div class="product">
-                                <asp:Repeater ID="rptSanPham" runat="server" DataSourceID="sdsSanPham">
-                                    <ItemTemplate>
-                                <div class="product-img">
-                                    <img src="/img/sanpham/<%# Eval("hinh") %>" alt="">
-                                    <div class="product-label">
-                                        <span class="sale">-30%</span>
-                                        <span class="new">NEW</span>
-                                    </div>
-                                </div>
-                                <div class="product-body">
-                                    <p class="product-category">Loại</p>
-                                    <h3 class="product-name"><a href="#"><%# Eval("tieude") %></a></h3>
-                                    <h4 class="product-price"><%# Eval("dongia") %><del class="product-old-price">$990.00</del></h4>
-                                    <div class="product-rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                    <div class="product-btns">
-                                        <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-                                        <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-                                        <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-                                    </div>
-                                </div>
-                                        <div class="add-to-cart">
-                                    <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>add to cart</button>
-                                </div>
-                                        </ItemTemplate>
-                                    </asp:Repeater>
-                                
-                            </div>
-                        </div>
+                        <asp:Repeater ID="rptSanPham" runat="server" DataSourceID="sdsSanPham">
+                            <ItemTemplate>
+							<div class="col-md-4 col-xs-6">
+								<div class="product">
+									<div class="product-img">
+										<img src="/img/sanpham/<%# Eval("hinh") %>" alt="">
+										<div class="product-label">
+											<span class="sale">-30%</span>
+											<span class="new">NEW</span>
+										</div>
+									</div>
+									<div class="product-body">
+										<p class="product-category">Tên</p>
+										<h3 class="product-name"><a href="#"><%# Eval("tieude") %></a></h3>
+										<h4 class="product-price"><%# Eval("donGia","{0:#,##0} đồng") %><del class="product-old-price">$990.00</del></h4>
+										<div class="product-btns">
+											<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+											<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+											<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+										</div>
+									</div>
+									<div class="add-to-cart">
+										<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+									</div>
+								</div>
+							</div>
 
-                        <div class="clearfix visible-sm visible-xs"></div>
-                        <!-- /product -->
-                        
+							<!-- /product -->
+							    <div class="clearfix visible-sm visible-xs"></div>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                                
                     </div>
+                    
                     <!-- /store products -->
 
                     <!-- store bottom filter -->
@@ -153,6 +134,9 @@
                         </ul>
                     </div>
                     <!-- /store bottom filter -->
+
+                    
+
                 </div>
                 <!-- /STORE -->
             </div>
@@ -163,12 +147,12 @@
     <!-- /SECTION -->
 
     <!----SQL--->
-    <asp:SqlDataSource ID="sdsTheLoai" runat="server" 
-                                ConnectionString="<%$ ConnectionStrings:QLDoAnShopDienThoaiConnectionString %>" 
-                                SelectCommand="SELECT * FROM [Theloai]"></asp:SqlDataSource>
+    
     <asp:SqlDataSource ID="sdsSanPham" runat="server" 
         ConnectionString="<%$ ConnectionStrings:QLDoAnShopDienThoaiConnectionString %>" 
         SelectCommand="SELECT * FROM [sanPham]"></asp:SqlDataSource>
-
-
+    <asp:SqlDataSource ID="sdsLoaiSanPham" runat="server" 
+        ConnectionString="<%$ ConnectionStrings:QLDoAnShopDienThoaiConnectionString %>" 
+        SelectCommand="SELECT * FROM [loaiSanPham]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="sdsTheLoai" runat="server"></asp:SqlDataSource>
 </asp:Content>
