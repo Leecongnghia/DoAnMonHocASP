@@ -8,7 +8,7 @@
                <div class="form-inline">
                    <div class="row text-right text-info btn-group-sm">Tên Sản Phẩm Cần Tìm
                     <asp:TextBox ID="txtTenDienThoai" runat="server" CssClass="form-control"></asp:TextBox>
-                   <asp:Button ID="btTimKiem" runat="server" Text="Tìm Kiếm" CssClass="btn btn-default" />
+                   <asp:Button ID="btTimKiem" runat="server" Text="Tìm Kiếm" CssClass="btn btn-danger"  />
                         </div>
                </div>
          </div>
@@ -24,9 +24,9 @@
             <asp:BoundField DataField="id" HeaderText="Mã SP" InsertVisible="False" ReadOnly="True" SortExpression="id" />
             <asp:ImageField DataImageUrlField="Hinh" DataImageUrlFormatString="img/sanpham/{0}" ReadOnly="true" ControlStyle-Width="100px" 
         ControlStyle-Font-Size="5px" HeaderStyle-Height="15px" HeaderText="Hình" SortExpression="Hinh" />
-            <asp:BoundField DataField="TieuDe" HeaderText="Tên Điện Thoại" SortExpression="TieuDe" ReadOnly="true" />
+            <asp:BoundField DataField="TieuDe" HeaderText="Tên Điện Thoại" SortExpression="TieuDe"  />
             <asp:BoundField DataField="donGia" DataFormatString="{0: #,##0} đồng" HeaderText="Đơn Giá" SortExpression="donGia" />
-            <asp:BoundField DataField="NoiDung" HeaderText="Tính Năng" SortExpression="NoiDung" ReadOnly="true"  />
+            <asp:BoundField DataField="NoiDung" HeaderText="Tính Năng" SortExpression="NoiDung"   />
              
             
             <asp:TemplateField ItemStyle-Wrap="false">
@@ -47,20 +47,6 @@
         <FooterStyle BackColor="#D10024" Font-Bold="True" ForeColor="White" />
         <HeaderStyle BackColor="#D10024" CssClass="text-center" Font-Bold="True" ForeColor="White" />
         <PagerStyle  BackColor="#D10024"  CssClass = "GridPager"  HorizontalAlign="Center" />
-        <%--<PagerTemplate>
-            <ul class="pagination">
-                <asp:Repeater ID="Pager" ItemType="System.Int32" SelectMethod="GetPages" runat="server">
-                    <ItemTemplate>
-                        <li class='<%#((int)Item == this.gvDienThoai.PageIndex+1)? "active" : "" %>'>
-                            <asp:LinkButton CommandName="Page" CommandArgument="<%# Item %>"
-                                Text="<%# Item %>" runat="server" OnClick="Pager_Click" />
-                        </li>
-                    </ItemTemplate>
-                </asp:Repeater>
-            </ul>
-        </PagerTemplate>--%>
-        <PagerSettings FirstPageText="Đầu"  LastPageText="Cuối" NextPageText="Sau" PreviousPageText="Trước"  />
-        
         <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
         <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
         <SortedAscendingCellStyle BackColor="#E9E7E2" />
@@ -75,7 +61,7 @@
         DeleteCommand="DELETE FROM [sanPham] WHERE [id] = @id" 
         InsertCommand="INSERT INTO [sanPham] ([idTheLoai], [TieuDe], [donGia], [NoiDung], [Hinh], [NoiBat], [idLoaiSanPham]) VALUES (@idTheLoai, @TieuDe, @donGia, @NoiDung, @Hinh, @NoiBat, @idLoaiSanPham)" 
         SelectCommand="SELECT * FROM [sanPham] WHERE ([TieuDe] LIKE '%' + @TieuDe + '%')" 
-        UpdateCommand="UPDATE [sanPham] SET  [donGia] = @donGia <%--[idTheLoai] = @idTheLoai [TieuDe] = @TieuDe [NoiDung] = @NoiDung [Hinh] = @Hinh [NoiBat] = @NoiBat  [idLoaiSanPham] = @idLoaiSanPham--%>    WHERE [id] = @id">
+        UpdateCommand="UPDATE [sanPham] SET [TieuDe] = @TieuDe, [donGia] = @donGia, [NoiDung] = @NoiDung  WHERE [id] = @id">
         <DeleteParameters>
             <asp:Parameter Name="id" Type="Int32" />
         </DeleteParameters>

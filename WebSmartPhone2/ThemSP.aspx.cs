@@ -22,15 +22,15 @@ namespace WebSmartPhone2
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["QLDoAnShopDienThoaiConnectionString"].ConnectionString);
             conn.Open();
             //([idTheLoai], [TieuDe], [donGia], [NoiDung], [Hinh], [NoiBat], [idLoaiSanPham])
-            string sql = "INSERT INTO sanPham (idTheLoai,TieuDe,donGia,NoiDung,Hinh,NoiBat,idLoaiSanPham) " +
-                "values(@idTheLoai,@TieuDe,@donGia,@NoiDung,@Hinh,@NoiBat,@idLoaiSanPham)";
+            string sql = "INSERT INTO sanPham (idTheLoai,TieuDe,donGia,NoiDung,Hinh,idLoaiSanPham) " +
+                "values(@idTheLoai,@TieuDe,@donGia,@NoiDung,@Hinh,@idLoaiSanPham)";
             SqlCommand cmd = new SqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@TieuDe", txtTenSP.Text);
-            cmd.Parameters.AddWithValue("@idLoaiSanPham", ddlTheLoai.SelectedValue);
-            cmd.Parameters.AddWithValue("@idTheLoai", ddlHangSP.SelectedValue);
+            cmd.Parameters.AddWithValue("@idTheLoai", ddlTheLoai.SelectedValue);
+            cmd.Parameters.AddWithValue("@idLoaiSanPham", ddlHangSP.SelectedValue);
             cmd.Parameters.AddWithValue("@donGia", txtGia.Text);
             cmd.Parameters.AddWithValue("@NoiDung", txtTinhNang.Text);
-            cmd.Parameters.AddWithValue("@NoiBat", ckNoiBat.Text);
+            
 
             if (FHinh.HasFile)
             {

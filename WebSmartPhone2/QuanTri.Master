@@ -48,12 +48,9 @@
                         <li><a href="#"><i class="fa fa-envelope-o"></i>email@email.com</a></li>
                         <li><a href="#"><i class="fa fa-map-marker"></i>252 Lý Chính Thắng P4 Q3</a></li>
                     </ul>
-                    <ul class="header-links pull-right" style="margin-left: 10px">
-                        <li><a href="Home.aspx">Đăng Xuất</a>
-
-                        </li>
-
-                    </ul>
+                    <%--<ul class="header-links pull-right" style="margin-left: 10px">
+                        <li><a href="DangXuat.aspx">Đăng Xuất</a></li>
+                    </ul>--%>
                     
                 </div>
             </div>
@@ -100,14 +97,31 @@
                                     <% if (Session["name"] == null)
                                         { %>
                                     <ul class="header-links pull-right">
-                                        <li><a style="font-size:18px" href="LogIn.aspx"><i class="fa fa-user-o"></i>Tài Khoản</a></li>
-                                    </ul>
+                                    <li class="nav-item dropdown" style="font-size:20px">
+                                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                                            <i class="fa fa-user-o"></i>Tài Khoản</a>
+                                        <div class="dropdown-menu mb-4 " style="background-color:black">
+                                            <div>
+                                                <a class="dropdown-item" href="logIn.aspx">Đăng Nhập</a>
+                                            </div>
+                                            <div>
+                                                <a class="dropdown-item" href="Register.aspx">Đăng Ký</a>
+                                            </div>
+                                            
+                                        </div>
+                                    </li>
+                                        </ul>
+
                                     <% }
                                         else
                                         { %>
-                                    <ul class="header-links pull-right ">
-                                        <li style="color: white"><i class="fa fa-user-o"></i><%Response.Write(Session["name"]); %></li>
+                                    <ul class="header-links pull-right" style="margin-left:10px">
+                                        <li style="font-size:15px"><a href="DangXuat.aspx">Đăng Xuất</a></li>
                                     </ul>
+                                    <ul class="header-links pull-right">
+                                        <li style="font-size:15px;color:white"><i class="fa fa-user-o"></i><%Response.Write(Session["name"]); %></li>
+                                    </ul>
+                                    
                                     <% } %>
                                 </div>
                                 <!-- Cart -->
@@ -115,9 +129,7 @@
                                     <a class="active" href="GioHang.aspx">
                                         <i class="fa fa-shopping-cart"></i>
                                         <span>Giỏ Hàng</span>
-                                        
                                     </a>
-
                                 </div>
                                 <!-- /Cart -->
 
@@ -166,7 +178,7 @@
                         </li>
                         <% if (Session["id"] != null)
                         { %>
-                        <% if (Session["id"].ToString() == "0")
+                        <% if (Session["id"].ToString() == "20")
                             { %>
                         <li class="nav-item">
                             <a class="nav-link" href="QuanTriSP.aspx">Quản Trị Sản Phẩm</a>

@@ -42,6 +42,15 @@ namespace WebSmartPhone2
         protected global::System.Web.UI.WebControls.TextBox txtTenSP;
 
         /// <summary>
+        /// rfvTenSP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvTenSP;
+
+        /// <summary>
         /// txtTinhNang control.
         /// </summary>
         /// <remarks>
@@ -51,13 +60,13 @@ namespace WebSmartPhone2
         protected global::System.Web.UI.WebControls.TextBox txtTinhNang;
 
         /// <summary>
-        /// ckNoiBat control.
+        /// rfvTinhNang control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckNoiBat;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvTinhNang;
 
         /// <summary>
         /// txtGia control.
@@ -69,13 +78,13 @@ namespace WebSmartPhone2
         protected global::System.Web.UI.WebControls.TextBox txtGia;
 
         /// <summary>
-        /// rfvTenSp control.
+        /// rfvGia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvTenSp;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvGia;
 
         /// <summary>
         /// cvGia control.

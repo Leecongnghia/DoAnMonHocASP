@@ -36,7 +36,7 @@ namespace WebSmartPhone2
                     {
                         Session["name"] = luue["name"];// lưu name khách hàng vào session
                         Session["id"] = luue["id"];// lưu id khách hàng vào session
-
+                        Response.Redirect("Home.aspx");
                     }
                     ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Đăng Nhập Thành Công')", true);
 
