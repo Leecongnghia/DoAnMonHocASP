@@ -5,8 +5,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <h4>TRANG THÊM SẢN PHẨM</h4>
-
-    <div class=" m-auto w-50">
+    
+    <div class="container m-auto w-50">
         <div class="row mb-2">
             <div class="col-md-2">Loại Sản Phẩm</div>
             <div class="col-md-10">
