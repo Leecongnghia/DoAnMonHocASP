@@ -1,701 +1,485 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/QuanTri.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="WebSmartPhone2.qlSanPham" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
     <!-- SECTION -->
-		<div class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-					<asp:Repeater ID="rptSlider" DataSourceID="sdsSlider" runat="server">
-						<ItemTemplate>
-					<!-- shop -->
-					<div class="col-md-4 col-xs-6">
-						<div class="shop">
-							<div class="shop-img">
-								<img src="/img/slide/<%# Eval("hinh") %>" alt="">
-							</div>
-							
-						</div>
-					</div>
-					<!-- /shop -->
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <asp:Repeater ID="rptSlider" DataSourceID="sdsSlider" runat="server">
+                    <ItemTemplate>
+                        <!-- shop -->
+                        <div class="col-md-4 col-xs-6">
+                            <div class="shop">
+                                <div class="shop-img">
+                                    <img style="height: 180px;" src="/img/slide/<%# Eval("hinh") %>" alt="">
+                                </div>
 
-					
-							</ItemTemplate>
-						</asp:Repeater>
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /SECTION -->
+                            </div>
+                        </div>
+                        <!-- /shop -->
 
-		<!-- SECTION -->
-		<div class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-					
-					<!-- section title -->
-					
-					<div class="col-md-12">
-						<div class="section-title">
-							<h3 class="title">Sản Phẩm Mới</h3>
-							<asp:Repeater ID="rptTheLoai" DataSourceID="sdsTheLoai" runat="server">
-						<ItemTemplate>
-							<div class="section-nav">
-								<ul class="section-tab-nav tab-nav">
-									<li style="margin:10px"><a data-toggle="tab"><%# Eval("ten") %></a></li>
-								</ul>
-							</div>
-							</ItemTemplate>
-						</asp:Repeater>
-						</div>
-					</div>
-							
-					<!-- /section title -->
 
-					<!-- Products tab & slick -->
-					<div class="col-md-12">
-						<div class="row">
-							<div class="products-tabs">
-								<!-- tab -->
-								<div id="tab1" class="tab-pane active">
-									<div class="products-slick " data-nav="#slick-nav-1">
-										<!-- product -->
-										<asp:Repeater ID="rptSanPham" DataSourceID="sdsSanPham" runat="server">
-											<ItemTemplate>
-										<div class="product m-auto" >
-									
-											<div class="product-img" >
-												<img src="/img/sanpham/<%# Eval("hinh") %>"  alt="">
-												<div class="product-label">
-													<span class="sale">-30%</span>
-													<span class="new">NEW</span>
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">Loại</p>
-												<h3 class="product-name"><a href="#"><%# Eval("tieude") %></a></h3>
-												<h4 class="product-price"><%# Eval("donGia","{0:#,##0} đồng") %><del class="product-old-price">$990.00</del></h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-											</div>
-											
-										</div>
-												</ItemTemplate>
-										</asp:Repeater>
-										<!-- /product -->
-												
-										
-									</div>
-									<div id="slick-nav-1" class="products-slick-nav"></div>
-								</div>
-								<!-- /tab -->
-							</div>
-						</div>
-					</div>
-					<!-- Products tab & slick -->
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /SECTION -->
+                    </ItemTemplate>
+                </asp:Repeater>
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /SECTION -->
 
-		<!-- HOT DEAL SECTION -->
-	
-		<div id="hot-deal" class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-					<div class="col-md-12">
-						<div class="hot-deal">
-							<ul class="hot-deal-countdown">
-								<li>
-									<div>
-										<h3>02</h3>
-										<span>Days</span>
-									</div>
-								</li>
-								<li>
-									<div>
-										<h3>10</h3>
-										<span>Hours</span>
-									</div>
-								</li>
-								<li>
-									<div>
-										<h3>34</h3>
-										<span>Mins</span>
-									</div>
-								</li>
-								<li>
-									<div>
-										<h3>60</h3>
-										<span>Secs</span>
-									</div>
-								</li>
-							</ul>
-							<h2 class="text-uppercase">hot deal this week</h2>
-							<p>New Collection Up to 50% OFF</p>
-							<a class="primary-btn cta-btn" href="#">Shop now</a>
-						</div>
-					</div>
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
-		
-		<!-- /HOT DEAL SECTION -->
+    <!-- SECTION -->
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
 
-		<!-- SECTION -->
-		<div class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
+                <!-- section title -->
 
-					<!-- section title -->
-					<div class="col-md-12">
-						<div class="section-title">
-							<h3 class="title">Top selling</h3>
-							<div class="section-nav">
-								<ul class="section-tab-nav tab-nav">
-									<li class="active"><a data-toggle="tab" href="#tab2">Laptops</a></li>
-									<li><a data-toggle="tab" href="#tab2">Smartphones</a></li>
-									<li><a data-toggle="tab" href="#tab2">Cameras</a></li>
-									<li><a data-toggle="tab" href="#tab2">Accessories</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!-- /section title -->
+                <div class="col-md-12">
+                    <div class="section-title">
+                        <h3 class="title">Sản Phẩm Mới</h3>
+                    </div>
+                </div>
 
-					<!-- Products tab & slick -->
-					<div class="col-md-12">
-						<div class="row">
-							<div class="products-tabs">
-								<!-- tab -->
-								<div id="tab2" class="tab-pane fade in active">
-									<div class="products-slick" data-nav="#slick-nav-2">
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/product06.png" alt="">
-												<div class="product-label">
-													<span class="sale">-30%</span>
-													<span class="new">NEW</span>
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">Category</p>
-												<h3 class="product-name"><a href="#">product name goes here</a></h3>
-												<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-											</div>
-										</div>
-										<!-- /product -->
+                <!-- /section title -->
 
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/product07.png" alt="">
-												<div class="product-label">
-													<span class="new">NEW</span>
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">Category</p>
-												<h3 class="product-name"><a href="#">product name goes here</a></h3>
-												<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star-o"></i>
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-											</div>
-										</div>
-										<!-- /product -->
+                <!-- Products tab & slick -->
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="products-tabs">
+                            <!-- tab -->
+                            <div id="tab1" class="tab-pane active">
+                                <div class="products-slick " data-nav="#slick-nav-1">
+                                    <!-- product -->
+                                    <asp:Repeater ID="rptSanPham" DataSourceID="sdsSanPham" runat="server">
+                                        <ItemTemplate>
+                                            <div class="product m-auto">
 
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/product08.png" alt="">
-												<div class="product-label">
-													<span class="sale">-30%</span>
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">Category</p>
-												<h3 class="product-name"><a href="#">product name goes here</a></h3>
-												<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-												<div class="product-rating">
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-											</div>
-										</div>
-										<!-- /product -->
+                                                <div class="product-img">
+                                                    <a href="ChiTietSP.aspx?idSanPham=<%# Eval("id")%>&idLoaiSanPham=<%# Eval("id")%>">
+                                                        <img style="width: 240px; height: 230px;" src="/img/sanpham/<%# Eval("hinh") %>" alt=""></a>
+                                                    <div class="product-label">
+                                                        <span class="sale">-30%</span>
+                                                        <span class="new">NEW</span>
+                                                    </div>
+                                                </div>
+                                                <div class="product-body">
+                                                    <p class="product-category">Loại</p>
+                                                    <h3 class="product-name"><a href="#"><%# Eval("tieude") %></a></h3>
+                                                    <h4 class="product-price"><%# Eval("donGia","{0:#,##0} đồng") %><del class="product-old-price"><%# Eval("donGia","{0:#,##0} đồng") %></del></h4>
+                                                    <div class="product-rating">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    <div class="product-btns">
+                                                        <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+                                                        <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+                                                        <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+                                                    </div>
+                                                </div>
+                                                <div class="add-to-cart">
+                                                    <%--<button class="add-to-cart-btn" runat="server">
+                                            <i class="fa fa-shopping-cart"></i> Thêm Vào Giỏ</button>--%>
+                                                    <asp:Button CssClass=" btn btn-danger" ID="btThemGioHang" OnClick="btThemGioHang_Click" runat="server"
+                                                        CommandArgument='<%# Eval("id") %>' Text="Thêm Vào Giỏ" />
+                                                    <i class="fa fa-shopping-cart"></i>
+                                                </div>
 
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/product09.png" alt="">
-											</div>
-											<div class="product-body">
-												<p class="product-category">Category</p>
-												<h3 class="product-name"><a href="#">product name goes here</a></h3>
-												<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-											</div>
-										</div>
-										<!-- /product -->
+                                            </div>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                    <!-- /product -->
 
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/product01.png" alt="">
-											</div>
-											<div class="product-body">
-												<p class="product-category">Category</p>
-												<h3 class="product-name"><a href="#">product name goes here</a></h3>
-												<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-											</div>
-										</div>
-										<!-- /product -->
-									</div>
-									<div id="slick-nav-2" class="products-slick-nav"></div>
-								</div>
-								<!-- /tab -->
-							</div>
-						</div>
-					</div>
-					<!-- /Products tab & slick -->
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /SECTION -->
 
-		<!-- SECTION -->
-		<div class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-					<div class="col-md-4 col-xs-6">
-						<div class="section-title">
-							<h4 class="title">Top selling</h4>
-							<div class="section-nav">
-								<div id="slick-nav-3" class="products-slick-nav"></div>
-							</div>
-						</div>
+                                </div>
+                                <div id="slick-nav-1" class="products-slick-nav"></div>
+                            </div>
+                            <!-- /tab -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Products tab & slick -->
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /SECTION -->
 
-						<div class="products-widget-slick" data-nav="#slick-nav-3">
-							<div>
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/product07.png" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-									</div>
-								</div>
-								<!-- /product widget -->
+    <!-- HOT DEAL SECTION -->
 
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/product08.png" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-									</div>
-								</div>
-								<!-- /product widget -->
+    <div id="hot-deal" class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="hot-deal">
+                        <ul class="hot-deal-countdown">
+                            <li>
+                                <div>
+                                    <h3>02</h3>
+                                    <span>Days</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <h3>10</h3>
+                                    <span>Hours</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <h3>34</h3>
+                                    <span>Mins</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <h3>60</h3>
+                                    <span>Secs</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <h2 class="text-uppercase">hot deal this week</h2>
+                        <p>New Collection Up to 50% OFF</p>
+                        <a class="primary-btn cta-btn" href="SanPham.aspx">Shop now</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
 
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/product09.png" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-									</div>
-								</div>
-								<!-- product widget -->
-							</div>
+    <!-- /HOT DEAL SECTION -->
 
-							<div>
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/product01.png" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-									</div>
-								</div>
-								<!-- /product widget -->
+    <!-- SECTION -->
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
 
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/product02.png" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-									</div>
-								</div>
-								<!-- /product widget -->
+                <!-- section title -->
+                <div class="col-md-12">
+                    <div class="section-title">
+                        <h3 class="title">Top Nổi Bật</h3>
+                    </div>
+                </div>
+                <!-- /section title -->
 
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/product03.png" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-									</div>
-								</div>
-								<!-- product widget -->
-							</div>
-						</div>
-					</div>
+                <!-- Products tab & slick -->
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="products-tabs">
+                            <!-- tab -->
+                            <div id="tab2" class="tab-pane fade in active">
+                                <div class="products-slick" data-nav="#slick-nav-2">
+                                    <!-- product -->
+                                    <asp:Repeater ID="Repeater1" runat="server" DataSourceID="sdsSanPhamByNoiBat">
+                                        <ItemTemplate>
+                                            <div class="product">
+                                                <div class="product-img">
+                                                    <a href="ChiTietSP.aspx?idSanPham=<%# Eval("id")%>">
+                                                        <img style="width: 263px; height: 250px;" src="/img/sanpham/<%# Eval("hinh") %>" alt=""></a>
+                                                    <div class="product-label">
+                                                        <span class="sale">-30%</span>
+                                                        <span class="new">NEW</span>
+                                                    </div>
+                                                </div>
+                                                <div class="product-body">
+                                                    <p class="product-category">Tên</p>
+                                                    <h3 class="product-name" style="height: 50px;"><a href="#"><%# Eval("tieude") %></a></h3>
+                                                    <h4 class="product-price"><%# Eval("donGia","{0:#,##0} đồng") %><del class="product-old-price">$990.00</del></h4>
+                                                    <div class="product-rating">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    <div class="product-btns">
+                                                        <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">Thêm Yêu Thich</span></button>
+                                                        <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">So Sánh</span></button>
+                                                        <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Xem Chi Tiết</span></button>
+                                                    </div>
+                                                </div>
+                                                <div class="add-to-cart">
+                                                    <%--<button id="btThemGioHang" class="add-to-cart-btn"
+                                              runat="server">
+                                            <i class="fa fa-shopping-cart"></i> Thêm Vào Giỏ</button>--%>
+                                                    <asp:Button CssClass="btn btn-danger" ID="btThemGioHang" OnClick="btThemGioHang_Click" runat="server"
+                                                        CommandArgument='<%# Eval("id") %>' Text="Thêm Vào Giỏ" />
+                                                    <i class="fa fa-shopping-cart"></i>
+                                                </div>
+                                            </div>
 
-					<div class="col-md-4 col-xs-6">
-						<div class="section-title">
-							<h4 class="title">Top selling</h4>
-							<div class="section-nav">
-								<div id="slick-nav-4" class="products-slick-nav"></div>
-							</div>
-						</div>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                    <!-- /product -->
 
-						<div class="products-widget-slick" data-nav="#slick-nav-4">
-							<div>
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/product04.png" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-									</div>
-								</div>
-								<!-- /product widget -->
 
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/product05.png" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-									</div>
-								</div>
-								<!-- /product widget -->
+                                </div>
+                                <div id="slick-nav-2" class="products-slick-nav"></div>
+                            </div>
+                            <!-- /tab -->
+                        </div>
+                    </div>
+                </div>
+                <!-- /Products tab & slick -->
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /SECTION -->
 
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/product06.png" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-									</div>
-								</div>
-								<!-- product widget -->
-							</div>
+    <!-- SECTION -->
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <div class="col-md-4 col-xs-6">
+                    <div class="section-title">
+                        <h4 class="title">Tin Tức</h4>
+                        <div class="section-nav">
+                            <div id="slick-nav-3" class="products-slick-nav"></div>
+                        </div>
+                    </div>
 
-							<div>
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/product07.png" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-									</div>
-								</div>
-								<!-- /product widget -->
+                    <div class="products-widget-slick" data-nav="#slick-nav-3">
+                        <div>
+                            <!-- product widget -->
+                            <asp:Repeater ID="Repeater3" runat="server" DataSourceID="sdsTinCum1">
+                                <ItemTemplate>
+                                    <div class="product-widget">
+                                        <div class="product-img">
+                                            <a href="TinTuc.aspx?id=<%# Eval("id")%>">
+                                                <img style="width: 60px; height: 40px;" src="img/tintuc/<%# Eval("hinh") %>" alt="" /></a>
+                                        </div>
+                                        <div class="product-body" style="width: 360px; height: 100px;">
+                                            <p style="height: 40px;" class="product-tieude"><a href="TinTuc.aspx?id=<%# Eval("id")%>"><%# Eval("TieuDe") %></a></p>
+                                            <p style="height: 30px;" class="product-tomtat"><%# Eval("TomTat") %></p>
+                                        </div>
+                                    </div>
+                                </ItemTemplate>
+                            </asp:Repeater>
 
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/product08.png" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-									</div>
-								</div>
-								<!-- /product widget -->
+                            <!-- /product widget -->
+                        </div>
+                        <div>
+                            <!-- product widget -->
+                            <asp:Repeater ID="Repeater2" runat="server" DataSourceID="sdsTinCum2">
+                                <ItemTemplate>
+                                    <div class="product-widget">
+                                        <div class="product-img">
+                                            <a href="TinTuc.aspx?id=<%# Eval("id")%>">
+                                                <img style="width: 60px; height: 40px;" src="img/tintuc/<%# Eval("hinh") %>" alt="" /></a>
+                                        </div>
+                                        <div class="product-body" style="width: 360px; height: 100px;">
+                                            <p style="height: 40px;" class="product-tieude"><a href="TinTuc.aspx?id=<%# Eval("id")%>"><%# Eval("TieuDe") %></a></p>
+                                            <p style="height: 30px;" class="product-tomtat"><%# Eval("TomTat") %></p>
+                                        </div>
+                                    </div>
+                                </ItemTemplate>
+                            </asp:Repeater>
 
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/product09.png" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-									</div>
-								</div>
-								<!-- product widget -->
-							</div>
-						</div>
-					</div>
+                            <!-- /product widget -->
+                        </div>
+                        <div>
+                            <!-- product widget -->
+                            <asp:Repeater ID="Repeater4" runat="server" DataSourceID="sdsTinCum3">
+                                <ItemTemplate>
+                                    <div class="product-widget">
+                                        <div class="product-img">
+                                            <a href="TinTuc.aspx?id=<%# Eval("id")%>">
+                                                <img style="width: 60px; height: 40px;" src="img/tintuc/<%# Eval("hinh") %>" alt="" /></a>
+                                        </div>
+                                        <div class="product-body" style="width: 360px; height: 100px;">
+                                            <p style="height: 40px;" class="product-tieude"><a href="TinTuc.aspx?id=<%# Eval("id")%>"><%# Eval("TieuDe") %></a></p>
+                                            <p style="height: 30px;" class="product-tomtat"><%# Eval("TomTat") %></p>
+                                        </div>
+                                    </div>
+                                </ItemTemplate>
+                            </asp:Repeater>
 
-					<div class="clearfix visible-sm visible-xs"></div>
+                            <!-- /product widget -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-6">
+                    <div class="section-title">
+                        <h4 class="title">Tin Tức</h4>
+                        <div class="section-nav">
+                            <div id="slick-nav-3" class="products-slick-nav"></div>
+                        </div>
+                    </div>
 
-					<div class="col-md-4 col-xs-6">
-						<div class="section-title">
-							<h4 class="title">Top selling</h4>
-							<div class="section-nav">
-								<div id="slick-nav-5" class="products-slick-nav"></div>
-							</div>
-						</div>
+                    <div class="products-widget-slick" data-nav="#slick-nav-3">
+                        <div>
+                            <!-- product widget -->
+                            <asp:Repeater ID="Repeater5" runat="server" DataSourceID="sdsTinCum2">
+                                <ItemTemplate>
+                                    <div class="product-widget">
+                                        <div class="product-img">
+                                            <a href="TinTuc.aspx?id=<%# Eval("id")%>">
+                                                <img style="width: 60px; height: 40px;" src="img/tintuc/<%# Eval("hinh") %>" alt="" /></a>
+                                        </div>
+                                        <div class="product-body" style="width: 360px; height: 100px;">
+                                            <p style="height: 40px;" class="product-tieude"><a href="TinTuc.aspx?id=<%# Eval("id")%>"><%# Eval("TieuDe") %></a></p>
+                                            <p style="height: 30px;" class="product-tomtat"><%# Eval("TomTat") %></p>
+                                        </div>
+                                    </div>
+                                </ItemTemplate>
+                            </asp:Repeater>
 
-						<div class="products-widget-slick" data-nav="#slick-nav-5">
-							<div>
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/product01.png" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-									</div>
-								</div>
-								<!-- /product widget -->
+                            <!-- /product widget -->
+                        </div>
+                        <div>
+                            <!-- product widget -->
+                            <asp:Repeater ID="Repeater6" runat="server" DataSourceID="sdsTinCum3">
+                                <ItemTemplate>
+                                    <div class="product-widget">
+                                        <div class="product-img">
+                                            <a href="TinTuc.aspx?id=<%# Eval("id")%>">
+                                                <img style="width: 60px; height: 40px;" src="img/tintuc/<%# Eval("hinh") %>" alt="" /></a>
+                                        </div>
+                                        <div class="product-body" style="width: 360px; height: 100px;">
+                                            <p style="height: 40px;" class="product-tieude"><a href="TinTuc.aspx?id=<%# Eval("id")%>"><%# Eval("TieuDe") %></a></p>
+                                            <p style="height: 30px;" class="product-tomtat"><%# Eval("TomTat") %></p>
+                                        </div>
+                                    </div>
+                                </ItemTemplate>
+                            </asp:Repeater>
 
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/product02.png" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-									</div>
-								</div>
-								<!-- /product widget -->
+                            <!-- /product widget -->
+                        </div>
+                        <div>
+                            <!-- product widget -->
+                            <asp:Repeater ID="Repeater7" runat="server" DataSourceID="sdsTinCum1">
+                                <ItemTemplate>
+                                    <div class="product-widget">
+                                        <div class="product-img">
+                                            <a href="TinTuc.aspx?id=<%# Eval("id")%>">
+                                                <img style="width: 60px; height: 40px;" src="img/tintuc/<%# Eval("hinh") %>" alt="" /></a>
+                                        </div>
+                                        <div class="product-body" style="width: 360px; height: 100px;">
+                                            <p style="height: 40px;" class="product-tieude"><a href="TinTuc.aspx?id=<%# Eval("id")%>"><%# Eval("TieuDe") %></a></p>
+                                            <p style="height: 30px;" class="product-tomtat"><%# Eval("TomTat") %></p>
+                                        </div>
+                                    </div>
+                                </ItemTemplate>
+                            </asp:Repeater>
 
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/product03.png" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-									</div>
-								</div>
-								<!-- product widget -->
-							</div>
+                            <!-- /product widget -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-6">
+                    <div class="section-title">
+                        <h4 class="title">Tin Tức</h4>
+                        <div class="section-nav">
+                            <div id="slick-nav-3" class="products-slick-nav"></div>
+                        </div>
+                    </div>
 
-							<div>
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/product04.png" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-									</div>
-								</div>
-								<!-- /product widget -->
+                    <div class="products-widget-slick" data-nav="#slick-nav-3">
+                        <div>
+                            <!-- product widget -->
+                            <asp:Repeater ID="Repeater8" runat="server" DataSourceID="sdsTinCum3">
+                                <ItemTemplate>
+                                    <div class="product-widget">
+                                        <div class="product-img">
+                                            <a href="TinTuc.aspx?id=<%# Eval("id")%>">
+                                                <img style="width: 60px; height: 40px;" src="img/tintuc/<%# Eval("hinh") %>" alt="" /></a>
+                                        </div>
+                                        <div class="product-body" style="width: 360px; height: 100px;">
+                                            <p style="height: 40px;" class="product-tieude"><a href="TinTuc.aspx?id=<%# Eval("id")%>"><%# Eval("TieuDe") %></a></p>
+                                            <p style="height: 30px;" class="product-tomtat"><%# Eval("TomTat") %></p>
+                                        </div>
+                                    </div>
+                                </ItemTemplate>
+                            </asp:Repeater>
 
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/product05.png" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-									</div>
-								</div>
-								<!-- /product widget -->
+                            <!-- /product widget -->
+                        </div>
+                        <div>
+                            <!-- product widget -->
+                            <asp:Repeater ID="Repeater9" runat="server" DataSourceID="sdsTinCum1">
+                                <ItemTemplate>
+                                    <div class="product-widget">
+                                        <div class="product-img">
+                                            <a href="TinTuc.aspx?id=<%# Eval("id")%>">
+                                                <img style="width: 60px; height: 40px;" src="img/tintuc/<%# Eval("hinh") %>" alt="" /></a>
+                                        </div>
+                                        <div class="product-body" style="width: 360px; height: 100px;">
+                                            <p style="height: 40px;" class="product-tieude"><a href="TinTuc.aspx?id=<%# Eval("id")%>"><%# Eval("TieuDe") %></a></p>
+                                            <p style="height: 30px;" class="product-tomtat"><%# Eval("TomTat") %></p>
+                                        </div>
+                                    </div>
+                                </ItemTemplate>
+                            </asp:Repeater>
 
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/product06.png" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-									</div>
-								</div>
-								<!-- product widget -->
-							</div>
-						</div>
-					</div>
+                            <!-- /product widget -->
+                        </div>
+                        <div>
+                            <!-- product widget -->
+                            <asp:Repeater ID="Repeater10" runat="server" DataSourceID="sdsTinCum2">
+                                <ItemTemplate>
+                                    <div class="product-widget">
+                                        <div class="product-img">
+                                            <a href="TinTuc.aspx?id=<%# Eval("id")%>">
+                                                <img style="width: 60px; height: 40px;" src="img/tintuc/<%# Eval("hinh") %>" alt="" /></a>
+                                        </div>
+                                        <div class="product-body" style="width: 360px; height: 100px;">
+                                            <p style="height: 40px;" class="product-tieude"><a href="TinTuc.aspx?id=<%# Eval("id")%>"><%# Eval("TieuDe") %></a></p>
+                                            <p style="height: 30px;" class="product-tomtat"><%# Eval("TomTat") %></p>
+                                        </div>
+                                    </div>
+                                </ItemTemplate>
+                            </asp:Repeater>
 
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /SECTION -->
+                            <!-- /product widget -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /SECTION -->
 
-		<!-- NEWSLETTER -->
-		<div id="newsletter" class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-					<div class="col-md-12">
-						<div class="newsletter">
-							<p>Sign Up for the <strong>NEWSLETTER</strong></p>
-							<form1>
-								<input class="input" type="email" placeholder="Enter Your Email">
-								<button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribe</button>
-							</form1>
-							<ul class="newsletter-follow">
-								<li>
-									<a href="#"><i class="fa fa-facebook"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-twitter"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-instagram"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-pinterest"></i></a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /NEWSLETTER -->
-
-	<%--SQL--%>
-	<asp:SqlDataSource ID="sdsSlider" runat="server" 
-		ConnectionString="<%$ ConnectionStrings:QLDoAnShopDienThoaiConnectionString %>" 
-		SelectCommand="SELECT * FROM [slide]"></asp:SqlDataSource>
-	<asp:SqlDataSource ID="sdsSanPham" runat="server" 
-		ConnectionString="<%$ ConnectionStrings:QLDoAnShopDienThoaiConnectionString %>" 
-		SelectCommand="SELECT * FROM [sanPham]"></asp:SqlDataSource>
-	<asp:SqlDataSource ID="sdsTheLoai" runat="server" 
-		ConnectionString="<%$ ConnectionStrings:QLDoAnShopDienThoaiConnectionString %>" 
-		SelectCommand="SELECT * FROM [Theloai]"></asp:SqlDataSource>
-
+    <%--SQL--%>
+    <asp:SqlDataSource ID="sdsSlider" runat="server"
+        ConnectionString="<%$ ConnectionStrings:QLDoAnShopDienThoaiConnectionString %>"
+        SelectCommand="SELECT * FROM [slide]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="sdsSanPham" runat="server"
+        ConnectionString="<%$ ConnectionStrings:QLDoAnShopDienThoaiConnectionString %>"
+        SelectCommand="SELECT * FROM [sanPham]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="sdsSanPhamByNoiBat" runat="server"
+        ConnectionString="<%$ ConnectionStrings:QLDoAnShopDienThoaiConnectionString %>"
+        SelectCommand="SELECT * FROM [sanPham] WHERE ([donGia] > 20000000)"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="sdsTinCum1" runat="server"
+        ConnectionString="<%$ ConnectionStrings:QLDoAnShopDienThoaiConnectionString %>"
+        SelectCommand="select*from tintuc where id >= 1  and id <= 3"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="sdsTinCum2" runat="server"
+        ConnectionString="<%$ ConnectionStrings:QLDoAnShopDienThoaiConnectionString %>"
+        SelectCommand="select*from tintuc where id >= 4 and id <= 6"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="sdsTinCum3" runat="server"
+        ConnectionString="<%$ ConnectionStrings:QLDoAnShopDienThoaiConnectionString %>"
+        SelectCommand="select*from tintuc where id >= 7 and id <= 9"></asp:SqlDataSource>
 </asp:Content>

@@ -17,38 +17,27 @@
                     <!-- aside Widget -->
                     <div class="aside">
                         <h3 class="aside-title"></h3>
-                        
+
                     </div>
                     <!-- /aside Widget -->
 
                     <!-- aside Widget -->
                     <div class="aside">
-                        <h3 class="aside-title">Top selling</h3>
-                        
+                        <h3 class="aside-title">Sản Phẩm Bán chạy</h3>
+
                         <div class="col-6 ">
                             <ul class="list-group" id="menu">
-                                <li href="#" class="list-group-item menu1 active">Menu
+                                <li href="#" class="list-group-item menu1 active" style="background-color: #D10024; font: bold">LOẠI SẢN PHẨM
                                 </li>
-                                <asp:Repeater ID="rptTheLoai" DataSourceID="sdsTheLoai" runat="server">
+                                <asp:Repeater ID="rptLoaiSP" runat="server" DataSourceID="sdsLoaiSanPham">
                                     <ItemTemplate>
                                         <li href="#" class="list-group-item menu1">
-                                            <a href="#"><%# Eval("") %></a>
+                                            <a href="#"><%# Eval("Ten") %></a>
+                                        </li>
                                     </ItemTemplate>
                                 </asp:Repeater>
-                                <asp:Repeater ID="rptLoaiSanPham" DataSourceID="sdsLoaiSanPham" runat="server">
-                                    <ItemTemplate>
-                                        <ul>
-                                            <li class="list-group-item">
-                                                <a href="#"><%# Eval("Ten") %></a>
-                                            </li>
-                                        </ul>
-                                    </ItemTemplate>
-                                </asp:Repeater>
-                                </li>
                             </ul>
                         </div>
-                                
-                        
                     </div>
                     <!-- /aside Widget -->
                 </div>
@@ -58,85 +47,107 @@
                 <div id="store" class="col-md-9">
                     <!-- store top filter -->
                     <div class="store-filter clearfix">
-                        <div class="store-sort">
-                            <label>
-                                Giá Từ
-                                <select class="input-select">
-                                    <option value="0">Popular</option>
-                                    <option value="1">Position</option>
-                                </select>
-                            </label>
+                        <div class="store-sort" style="float: left">
+                            <%--<!-- SEARCH BAR -->
+                            <div>
+                                <div class="header-search">
+                                    <div class="form-inline">
+                                        <div class="col-md-3 " style="width: 150px">
+                                            <h4>Tìm Kiếm</h4>
+                                        </div>
+                                        <asp:TextBox ID="txtTimKiem" CssClass="form-control" runat="server"></asp:TextBox>
+                                        <button runat="server" id="btnTimKiem" class="search-btn active btn btn-danger"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /SEARCH BAR -->--%>
 
-                            <label>
-                                đến :
-								
-                                <select class="input-select">
-                                    <option value="0">20</option>
-                                    <option value="1">50</option>
-                                </select>
-                            </label>
                         </div>
-                        <ul class="store-grid">
-                            <li class="active"><i class="fa fa-th"></i></li>
-                            <li><a href="#"><i class="fa fa-th-list"></i></a></li>
-                        </ul>
                     </div>
                     <!-- /store top filter -->
-                        
+
                     <!-- store products -->
                     <div class="row">
                         <!-- product -->
-                        <asp:Repeater ID="rptSanPham" runat="server" DataSourceID="sdsSanPham">
+                        <asp:ListView ID="lvSanPham" runat="server" DataSourceID="sdsSanPham">
+
                             <ItemTemplate>
-							<div class="col-md-4 col-xs-6">
-								<div class="product">
-									<div class="product-img">
-										<img src="/img/sanpham/<%# Eval("hinh") %>" alt="">
-										<div class="product-label">
-											<span class="sale">-30%</span>
-											<span class="new">NEW</span>
-										</div>
-									</div>
-									<div class="product-body">
-										<p class="product-category">Tên</p>
-										<h3 class="product-name"><a href="#"><%# Eval("tieude") %></a></h3>
-										<h4 class="product-price"><%# Eval("donGia","{0:#,##0} đồng") %><del class="product-old-price">$990.00</del></h4>
-										<div class="product-btns">
-											<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-											<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-											<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-										</div>
-									</div>
-									<div class="add-to-cart">
-										<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-									</div>
-								</div>
-							</div>
+                                <div class="col-md-4 col-xs-6 ">
+                                    <div class="product">
+                                        <div class="product-img" style="text-align: center">
+                                            <a href="ChiTietSP.aspx?idSanPham=<%# Eval("id")%>&idLoaiSanPham=<%# Eval("idLoaiSanPham")%>">
+                                                <img src="/img/sanpham/<%# Eval("hinh") %>" style="width: 150px; height: 150px"></a>
+                                            <div class="product-label">
+                                                <span class="sale">-30%</span>
+                                                <span class="new">NEW</span>
+                                            </div>
+                                        </div>
+                                        <div class="product-body">
+                                            <p class="product-category">Tên</p>
+                                            <h3 class="product-name" style="height: 50px"><a href="ChiTietSP.aspx?idSanPham=<%# Eval("id")%>&idLoaiSanPham=<%# Eval("idLoaiSanPham")%>"><%# Eval("tieude") %></a></h3>
+                                            <h4 class="product-price"><%# Eval("donGia","{0:#,##0} đồng") %><del class="product-old-price">$990.00</del></h4>
+                                            <div class="product-btns">
+                                                <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">Thêm Yêu Thích</span></button>
+                                                <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">So Sánh</span></button>
+                                                <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Xem Chi Tiết</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="add-to-cart">
 
-							<!-- /product -->
-							    <div class="clearfix visible-sm visible-xs"></div>
-                                </ItemTemplate>
-                            </asp:Repeater>
-                                
+                                            <%--<button id="btThemGioHang" class="add-to-cart-btn"
+                                              runat="server">
+                                            <i class="fa fa-shopping-cart"></i> Thêm Vào Giỏ</button>--%>
+                                            <asp:Button ID="btThemGioHang" CssClass="btn btn-danger" OnClick="btThemGioHang_Click" runat="server"
+                                                CommandArgument='<%# Eval("id") %>' Text="Thêm Vào Giỏ" />
+                                            <i class="fa fa-shopping-cart"></i>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- /product -->
+                                <div class="clearfix visible-sm visible-xs"></div>
+                                <%--<div class="clearfix visible-lg visible-md"></div>--%>
+                                <%--<div class="clearfix visible-sm visible-xs"></div>--%>
+                                <%--<div class="clearfix visible-lg visible-md visible-sm visible-xs"></div>--%>
+                            </ItemTemplate>
+
+                            <%--Phân trang--%>
+                            <LayoutTemplate>
+                                <br />
+                                <div class="form-inline">
+                                    <div id="itemPlaceHolder" runat="server">
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="store-filter clearfix">
+                                    <ul class="ulpager">
+                                        <li class="active" style="text-align: center">
+                                            <a href="#">
+                                                <div style="font-size: 20px; margin-top: 70px">
+                                                    <asp:DataPager ID="Pager" runat="server" PageSize="9">
+                                                        <Fields>
+                                                            <asp:NumericPagerField ButtonType="Button"
+                                                                NextPreviousButtonCssClass="bg-danger"
+                                                                CurrentPageLabelCssClass="bg-success" />
+                                                        </Fields>
+                                                    </asp:DataPager>
+                                                </div>
+                                            </a></li>
+                                    </ul>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+                                    </div>
+                                </div>
+                            </LayoutTemplate>
+
+                        </asp:ListView>
                     </div>
-                    
+
                     <!-- /store products -->
-
-                    <!-- store bottom filter -->
-                    <div class="store-filter clearfix">
-                        <span class="store-qty"></span>
-                        <ul class="store-pagination">
-                            <li class="active">1</li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                        </ul>
-                    </div>
-                    <!-- /store bottom filter -->
-
-                    
-
                 </div>
                 <!-- /STORE -->
             </div>
@@ -146,13 +157,33 @@
     </div>
     <!-- /SECTION -->
 
-    <!----SQL--->
-    
-    <asp:SqlDataSource ID="sdsSanPham" runat="server" 
-        ConnectionString="<%$ ConnectionStrings:QLDoAnShopDienThoaiConnectionString %>" 
-        SelectCommand="SELECT * FROM [sanPham]"></asp:SqlDataSource>
-    <asp:SqlDataSource ID="sdsLoaiSanPham" runat="server" 
-        ConnectionString="<%$ ConnectionStrings:QLDoAnShopDienThoaiConnectionString %>" 
-        SelectCommand="SELECT * FROM [loaiSanPham]"></asp:SqlDataSource>
-    <asp:SqlDataSource ID="sdsTheLoai" runat="server"></asp:SqlDataSource>
+    <!---------------------------SQL----------------------------->
+
+    <asp:SqlDataSource ID="sdsSanPham" runat="server"
+        ConnectionString="<%$ ConnectionStrings:QLDoAnShopDienThoaiConnectionString %>"
+        SelectCommand="SELECT * FROM [sanPham] WHERE ([idTheLoai] = @idTheLoai)">
+        <SelectParameters>
+            <asp:QueryStringParameter Name="idTheLoai" QueryStringField="idtheloai" DefaultValue="1" Type="Int32" />
+        </SelectParameters>
+
+    </asp:SqlDataSource>
+    <asp:SqlDataSource ID="sdsLoaiSanPham" runat="server"
+        ConnectionString="<%$ ConnectionStrings:QLDoAnShopDienThoaiConnectionString %>"
+        SelectCommand="SELECT * FROM [loaiSanPham] WHERE ([idTheLoai] = @idTheLoai)">
+        <SelectParameters>
+            <asp:QueryStringParameter DefaultValue="1" Name="idTheLoai" QueryStringField="idtheloai" Type="Int32" />
+        </SelectParameters>
+    </asp:SqlDataSource>
+    <asp:SqlDataSource ID="sdsSPTheoLoaiSp" runat="server" ConnectionString="<%$ ConnectionStrings:QLDoAnShopDienThoaiConnectionString %>" SelectCommand="SELECT * FROM [sanPham] WHERE ([idLoaiSanPham] = @idLoaiSanPham)">
+        <SelectParameters>
+            <asp:QueryStringParameter Name="idLoaiSanPham" QueryStringField="idLoaiSanPham" Type="Int32" />
+        </SelectParameters>
+    </asp:SqlDataSource>
+
+    <%--<asp:SqlDataSource ID="sdsTiemKiem" runat="server" ConnectionString="<%$ ConnectionStrings:QLDoAnShopDienThoaiConnectionString %>" SelectCommand="SELECT * FROM [sanPham] WHERE ([TieuDe] LIKE '%' + @TieuDe + '%')">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="txtTimKiem" Name="TieuDe" PropertyName="Text" Type="String" />
+        </SelectParameters>
+    </asp:SqlDataSource>
+    --%>
 </asp:Content>

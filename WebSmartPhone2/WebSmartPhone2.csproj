@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="ChiTietSP.aspx" />
     <Content Include="Counter.txt" />
+    <Content Include="css\GridPager.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\nouislider.min.css" />
@@ -77,7 +78,9 @@
     <Content Include="css\style.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\slick.svg" />
+    <Content Include="GioHang.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="img\logo\logo.jpg" />
     <Content Include="img\sanpham\ban-phim-akko-3081-rf-matcha-1.jpg" />
     <Content Include="img\sanpham\ban-phim-akko-3081-rf-ocean-start-1.jpg" />
     <Content Include="img\sanpham\ban-phim-apple-magic-keyboard-2021.jpg" />
@@ -172,6 +175,15 @@
     <Content Include="img\slide\banner-tgdd-800x300.jpg" />
     <Content Include="img\slide\sl-iphone-14-promax.jpg" />
     <Content Include="img\slide\thietkehaithanh-banner-1-1.jpg" />
+    <Content Include="img\tintuc\tin1.jpg" />
+    <Content Include="img\tintuc\tin2.jpg" />
+    <Content Include="img\tintuc\tin3.jpg" />
+    <Content Include="img\tintuc\tin4.jpg" />
+    <Content Include="img\tintuc\tin5.jpg" />
+    <Content Include="img\tintuc\tin6.jpg" />
+    <Content Include="img\tintuc\tin7.jpg" />
+    <Content Include="img\tintuc\tin8.jpg" />
+    <Content Include="img\tintuc\tin9.jpg" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery.min.js" />
     <Content Include="js\jquery.zoom.min.js" />
@@ -180,9 +192,12 @@
     <Content Include="js\slick.min.js" />
     <Content Include="LogIn.aspx" />
     <Content Include="Home.aspx" />
+    <Content Include="QuanTriSP.aspx" />
+    <Content Include="Register.aspx" />
     <Content Include="SanPham.aspx" />
-    <Content Include="SQLQuery2 %281%29.sql" />
     <Content Include="ThanhToan.aspx" />
+    <Content Include="ThemSP.aspx" />
+    <Content Include="TinTuc.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -192,6 +207,13 @@
     </Compile>
     <Compile Include="ChiTietSP.aspx.designer.cs">
       <DependentUpon>ChiTietSP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GioHang.aspx.cs">
+      <DependentUpon>GioHang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GioHang.aspx.designer.cs">
+      <DependentUpon>GioHang.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -203,6 +225,8 @@
     <Compile Include="LogIn.aspx.designer.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\CartItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
@@ -218,6 +242,20 @@
     <Compile Include="QuanTri.Master.designer.cs">
       <DependentUpon>QuanTri.Master</DependentUpon>
     </Compile>
+    <Compile Include="QuanTriSP.aspx.cs">
+      <DependentUpon>QuanTriSP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuanTriSP.aspx.designer.cs">
+      <DependentUpon>QuanTriSP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SanPham.aspx.cs">
       <DependentUpon>SanPham.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -231,6 +269,20 @@
     </Compile>
     <Compile Include="ThanhToan.aspx.designer.cs">
       <DependentUpon>ThanhToan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ThemSP.aspx.cs">
+      <DependentUpon>ThemSP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThemSP.aspx.designer.cs">
+      <DependentUpon>ThemSP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TinTuc.aspx.cs">
+      <DependentUpon>TinTuc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TinTuc.aspx.designer.cs">
+      <DependentUpon>TinTuc.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -253,7 +305,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

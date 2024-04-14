@@ -15,31 +15,22 @@ namespace WebSmartPhone2
     {
 
         /// <summary>
-        /// rptTheLoai control.
+        /// rptLoaiSP control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptTheLoai;
+        protected global::System.Web.UI.WebControls.Repeater rptLoaiSP;
 
         /// <summary>
-        /// rptLoaiSanPham control.
+        /// lvSanPham control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptLoaiSanPham;
-
-        /// <summary>
-        /// rptSanPham control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptSanPham;
+        protected global::System.Web.UI.WebControls.ListView lvSanPham;
 
         /// <summary>
         /// sdsSanPham control.
@@ -60,12 +51,12 @@ namespace WebSmartPhone2
         protected global::System.Web.UI.WebControls.SqlDataSource sdsLoaiSanPham;
 
         /// <summary>
-        /// sdsTheLoai control.
+        /// sdsSPTheoLoaiSp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource sdsTheLoai;
+        protected global::System.Web.UI.WebControls.SqlDataSource sdsSPTheoLoaiSp;
     }
 }
